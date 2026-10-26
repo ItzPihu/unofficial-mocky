@@ -51,7 +51,7 @@
     "react-use": "^15.3.4",
     "redux": "^4.0.5",
     "redux-localstorage-simple": "^2.2.0",
-    "typescript": "~3.9.5",
+    "typescript": "~7.0.2",
     "unique-random-array": "^2.0.0",
     "word-wrap": "^1.2.3",
     "yup": "^0.29.1"

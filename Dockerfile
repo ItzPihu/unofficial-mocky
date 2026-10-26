@@ -1,4 +1,10 @@
-FROM hseeberger/scala-sbt:17.0.2_1.6.2_3.1.1 AS builder
+FROM eclipse-temurin:17-jdk AS builder
+ARG SBT_VERSION=1.9.9
+RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates \
+    && update-ca-certificates \
+    && curl -fsSL https://github.com/sbt/sbt/releases/download/v${SBT_VERSION}/sbt-${SBT_VERSION}.tgz | tar xz -C /opt \
+    && rm -rf /var/lib/apt/lists/*
+ENV PATH="/opt/sbt/bin:${PATH}"
 WORKDIR /app
 COPY server ./server
 WORKDIR /app/server

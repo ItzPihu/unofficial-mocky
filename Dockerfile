@@ -5,7 +5,7 @@ COPY . .
 RUN sbt compile stage
 
 # Stage 2: Production Execution Environment
-FROM openjdk:17-slim
+FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 # Copy the compiled staged binaries from the builder phase
 COPY --from=builder /app/target/universal/stage ./
